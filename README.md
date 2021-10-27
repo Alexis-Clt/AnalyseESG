@@ -20,13 +20,10 @@ Algorithme d'analyse du sentiment du marché intégrant les valeurs environnemen
     6. [lxml](https://pypi.org/project/lxml/)
     7. [yfinance](https://pypi.org/project/yfinance/)
 
+ou en utilisant l'invité de commande et pip `pip3 install --upgrade numpy`
+
 ---
 
 ## Contributeurs
 
 Alexis Cullet <alexis.cullet@edu.devinci.fr>
-
-
-
-I think you should use an
-`<addr>` element here instead.
