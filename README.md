@@ -1,5 +1,10 @@
 # Algorithme de sentiment intégrant les valeurs ESG
 
+## Disclaimer/Attention
+
+<p>This is a school project. We do not recommend the use of the information output by the algorithm as a financial advice.</p>
+<p>Ceci est un projet scolaire. Nous ne recommandons pas l'usage des informations en sortie de l'algorithme comme conseil financier</p>
+
 ## Description du projet
 
 **En développement**
