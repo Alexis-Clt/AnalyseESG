@@ -20,7 +20,7 @@ Algorithme d'analyse du sentiment du marché intégrant les valeurs environnemen
     6. [lxml](https://pypi.org/project/lxml/)
     7. [yfinance](https://pypi.org/project/yfinance/)
 
-ou en utilisant l'invité de commande et pip `pip3 install --upgrade numpy`
+On peut aussi utiliser l'invité de commande windows et pip, par exemple `pip3 install --upgrade numpy`
 
 ---
 
