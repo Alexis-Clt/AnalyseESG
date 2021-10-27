@@ -1,2 +1,3 @@
 # VI-AnalyseESG
-Analyse du sentiment intégrant les valeurs ESG
+
+Algorithme d'analyse du sentiment intégrant les valeurs ESG
