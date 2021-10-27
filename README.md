@@ -1,5 +1,7 @@
 # Algorithme de sentiment intégrant les valeurs ESG
 
+## Description du projet
+
 **En développement**
 
 Projet PING avec Vinvi Investments.
