@@ -25,3 +25,8 @@ Algorithme d'analyse du sentiment du marché intégrant les valeurs environnemen
 ## Contributeurs
 
 Alexis Cullet <alexis.cullet@edu.devinci.fr>
+
+
+
+I think you should use an
+`<addr>` element here instead.
