@@ -9,21 +9,19 @@ Algorithme d'analyse du sentiment du marché intégrant les valeurs environnemen
 
 ## Prérequis
 
--Python 3.9 (pandas ne supporte pas encore python 3.10) : [lien](https://www.python.org/downloads/release/python-397/)
+* Python 3.9 (pandas ne supporte pas encore python 3.10) : [lien](https://www.python.org/downloads/release/python-397/)
 
--Package python (dans l'ordre) :
-    -[numpy](https://pypi.org/project/numpy/)
-    -[pandas](https://pypi.org/project/pandas/)
-    -[PyQt5](https://pypi.org/project/PyQt5/) : uniquement pour les IDE ne pouvant afficher les graphiques matplotlib (VSCode)
-    -[matplotlib](https://pypi.org/project/matplotlib/)
-    -[requests](https://pypi.org/project/requests/)
-    -[lxml](https://pypi.org/project/lxml/)
-    -[yfinance](https://pypi.org/project/yfinance/)
+* Package python (dans l'ordre) :
+    1. [numpy](https://pypi.org/project/numpy/)
+    2. [pandas](https://pypi.org/project/pandas/)
+    3. [PyQt5](https://pypi.org/project/PyQt5/) : uniquement pour les IDE ne pouvant afficher les graphiques matplotlib (VSCode)
+    4. [matplotlib](https://pypi.org/project/matplotlib/)
+    5. [requests](https://pypi.org/project/requests/)
+    6. [lxml](https://pypi.org/project/lxml/)
+    7. [yfinance](https://pypi.org/project/yfinance/)
 
 ---
 
 ## Contributeurs
 
-*Alexis Cullet* <alexis.cullet@edu.devinci.fr>
-
-
+Alexis Cullet <alexis.cullet@edu.devinci.fr>
