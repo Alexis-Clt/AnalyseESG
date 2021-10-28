@@ -20,15 +20,17 @@ Algorithme d'analyse du sentiment du marché intégrant les valeurs environnemen
 1. Python 3.9 (pandas ne supporte pas encore python 3.10) : [lien](https://www.python.org/downloads/release/python-397/)
 
 2. Package python (dans l'ordre) :
-    * [numpy](https://pypi.org/project/numpy/)
-    * [pandas](https://pypi.org/project/pandas/)
+    * numpy
+    * pandas
     * [PyQt5](https://pypi.org/project/PyQt5/) : uniquement pour les IDE ne pouvant afficher les graphiques matplotlib (VSCode)
-    * [matplotlib](https://pypi.org/project/matplotlib/)
-    * [requests](https://pypi.org/project/requests/)
+    * matplotlib
+    * [DateTime](https://pypi.org/project/DateTime/)
+    * requests
+    * wheel
     * [lxml](https://pypi.org/project/lxml/)
     * [yfinance](https://pypi.org/project/yfinance/)
 
-On peut aussi utiliser l'invité de commande windows et pip, par exemple `pip3 install --upgrade numpy`
+On peut aussi utiliser l'invité de commande windows et pip, par exemple `pip3 install -r requirements.txt`
 
 ---
 
