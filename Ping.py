@@ -4,7 +4,7 @@ def Maj(ch):#convertir une chaine de caractère en majuscule
     for i in range(length(ch)):
         a+=ch[i].upper()
     return a
-def Contain_mot(ch,tab):#verifier si un mot d'une phrase  existe dans un tableau
+def Contain_mot(ch,tab):#verifier si un mot d'une phrase  existe dans une liste
     L=ch.split()
     a=False
     for i in range(length(L)):
