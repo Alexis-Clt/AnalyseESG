@@ -7,3 +7,4 @@ requests==2.26.0
 lxml==4.6.5
 yfinance==0.1.64
 DateTime==4.3
+tweepy==4.5.0
