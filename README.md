@@ -38,8 +38,13 @@ On peut aussi utiliser l'invité de commande windows et pip, par exemple `pip3 i
 ## Contributeurs
 
 Alexis Cullet <alexis.cullet@edu.devinci.fr>
+
 Thomas Dunn <thomas.dunn@edu.devinci.fr>
+
 Maamoun Mekki <maamoun.mekki@edu.devinci.fr>
+
 Thomas Savini <thomas.savini@edu.devinci.fr>
+
 Léon Thomir <leon.thomir@edu.devinci.fr>
+
 Hugo Yeremian Nadim <hugo.yeremian_nadim@edu.devinci.fr>
