@@ -1,6 +1,10 @@
-import Credentials
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
 import tweepy
 import nltk
+
+import Credentials
 
 class TwitterClient(object):
 
@@ -26,10 +30,10 @@ class TwitterClient(object):
         return self.client.get_me()
 
     def recentTweetsCount(self, query):
-        return(self.client.get_recent_tweets_count(query=query, granularity="day"))
+        return self.client.get_recent_tweets_count(query=query, granularity="day")
 
+    def lastSevenDaysTweetsCount(self, query):
+        return self.client.get_recent_tweets_count(query).meta["total_tweet_count"]
 
 client = TwitterClient()
-counts =client.recentTweetsCount("tesla").meta
-
-print(counts)
+print(client.lastSevenDaysTweetsCount("lvmh -is:retweet"))
