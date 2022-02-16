@@ -1,3 +1,11 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Wed Feb 16 17:00:19 2022
+
+@author: user
+"""
+
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -34,6 +42,11 @@ class TwitterClient(object):
 
     def lastSevenDaysTweetsCount(self, query):
         return self.client.get_recent_tweets_count(query).meta["total_tweet_count"]
+    
+    def lastSevenDaysTweets(self,query):
+        return self.client.search_recent_tweets(query)
 
 client = TwitterClient()
 print(client.lastSevenDaysTweetsCount("lvmh -is:retweet"))
+print(client.lastSevenDaysTweets("lvmh -is:retweet").data)
+    
