@@ -11,6 +11,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import tweepy
 import nltk
+from nltk.sentiment import SentimentIntensityAnalyzer
 
 import Credentials
 
@@ -46,7 +47,18 @@ class TwitterClient(object):
     def lastSevenDaysTweets(self,query):
         return self.client.search_recent_tweets(query)
 
+
 client = TwitterClient()
-print(client.lastSevenDaysTweetsCount("lvmh -is:retweet"))
-print(client.lastSevenDaysTweets("lvmh -is:retweet").data)
-    
+collected_data=client.lastSevenDaysTweets("air liquide company").data
+test=collected_data[0].text
+text=[]
+for data in collected_data:
+    text.append(data.text)
+for sentence in text:
+    sid = SentimentIntensityAnalyzer() #juste un exemple car celui là vient de nltk.sentiement.vader à aller voir sur internet pour créer nos propres points positifs et négatifs
+    print(sentence)
+    ss = sid.polarity_scores(sentence)
+    for k in sorted(ss):
+        print('{0}: {1}, '.format(k, ss[k]), end='')
+    print() 
+#donc juste à créer notre classe Sentiment avec les mots clés choisis
