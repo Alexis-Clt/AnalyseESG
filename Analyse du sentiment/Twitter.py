@@ -6,14 +6,10 @@ Created on Wed Feb 16 17:00:19 2022
 @author: user
 """
 
-import numpy as np
-import pandas as pd
-import matplotlib.pyplot as plt
-import tweepy
-import nltk
-from nltk.sentiment import SentimentIntensityAnalyzer
 
+import tweepy
 import Credentials
+from SentimentIntensityAnalyzer import SentimentIntensityAnalyzerClass
 
 class TwitterClient(object):
 
@@ -55,10 +51,10 @@ text=[]
 for data in collected_data:
     text.append(data.text)
 for sentence in text:
-    sid = SentimentIntensityAnalyzer() #juste un exemple car celui là vient de nltk.sentiement.vader à aller voir sur internet pour créer nos propres points positifs et négatifs
+    sid = SentimentIntensityAnalyzerClass() 
     print(sentence)
     ss = sid.polarity_scores(sentence)
     for k in sorted(ss):
         print('{0}: {1}, '.format(k, ss[k]), end='')
     print() 
-#donc juste à créer notre classe Sentiment avec les mots clés choisis
+#donc juste à modifier la classe Constants selon nos propres mots
