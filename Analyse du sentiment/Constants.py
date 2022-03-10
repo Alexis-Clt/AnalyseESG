@@ -89,6 +89,11 @@ class ConstantsClass:
         "rarely",
         "seldom",
         "despite",
+        "loss",
+        "recession",
+        "debt",
+        
+        
     }
 
     # booster/dampener 'intensifiers' or 'degree adverbs'
@@ -161,6 +166,9 @@ class ConstantsClass:
         "sorta": B_DECR,
         "sortof": B_DECR,
         "sort-of": B_DECR,
+        "investment": B_DECR,
+        "profit": B_DECR,
+        
     }
 
     # check for special case idioms using a sentiment-laden keyword known to SAGE
@@ -172,6 +180,26 @@ class ConstantsClass:
         "cut the mustard": 2,
         "kiss of death": -1.5,
         "hand to mouth": -2,
+        "bring home the bacon" : -2,
+        "gravy train" : 1
+        "nest egg" : 3
+        "cook the books" : -3
+        "cheapskate" : -2
+        "bull market" : 2
+        "bear market" : -2
+        "bet against": -2
+        "bail out": 2
+        "run up debts": -2
+        "profit from": 2
+        "rip off": -3
+        "default on a debt" : -3
+        "cut back": -2
+        "in the red": -2
+        "in the black": 2
+        "run on the bank": -2
+        
+        
+        
     }
 
     # for removing punctuation
