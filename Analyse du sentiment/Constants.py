@@ -2,7 +2,6 @@
 # -*- coding: utf-8 -*-
 """
 Created on Thu Feb 24 17:26:19 2022
-
 @author: user
 """
 
@@ -181,22 +180,22 @@ class ConstantsClass:
         "kiss of death": -1.5,
         "hand to mouth": -2,
         "bring home the bacon" : -2,
-        "gravy train" : 1
-        "nest egg" : 3
-        "cook the books" : -3
-        "cheapskate" : -2
-        "bull market" : 2
-        "bear market" : -2
-        "bet against": -2
-        "bail out": 2
-        "run up debts": -2
-        "profit from": 2
-        "rip off": -3
-        "default on a debt" : -3
-        "cut back": -2
-        "in the red": -2
-        "in the black": 2
-        "run on the bank": -2
+        "gravy train" : 1,
+        "nest egg" : 3,
+        "cook the books" : -3,
+        "cheapskate" : -2,
+        "bull market" : 2,
+        "bear market" : -2,
+        "bet against": -2,
+        "bail out": 2,
+        "run up debts": -2,
+        "profit from": 2,
+        "rip off": -3,
+        "default on a debt" : -3,
+        "cut back": -2,
+        "in the red": -2,
+        "in the black": 2,
+        "run on the bank": -2,
         
         
         

@@ -9,14 +9,20 @@ Created on Wed Mar  9 16:54:35 2022
 from Twitter import TwitterClient
 from SentimentIntensityAnalyzer import SentimentIntensityAnalyzerClass
 
-client = TwitterClient()
-print("\n")
-print("Yahoo Finance tweets")
-print("\n")
-collected_data=client.client.get_users_tweets(id="19546277").data #récupère tout les tweets de yahoo finance
-test=collected_data[0].text
-text=[]
-for data in collected_data:
-    text.append(data.text)
-for sentence in text:
-    print(sentence)
+def YahooFinanceSS(text):
+    ssresult=[]
+    for sentence in text:
+        sid = SentimentIntensityAnalyzerClass() 
+        ss = sid.polarity_scores(sentence)
+        ssresult.append(ss)
+    return ssresult
+
+def CleaningData(query):
+    client = TwitterClient()
+    collected_data=client.client.get_users_tweets(id="19546277").data #récupère tout les tweets de yahoo finance
+    text=[]
+    for data in collected_data:
+        if (query in data.text):
+            text.append(data.text)
+    return text
+    

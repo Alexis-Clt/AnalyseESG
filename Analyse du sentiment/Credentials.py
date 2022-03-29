@@ -1,3 +1,11 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Wed Feb 16 16:59:15 2022
+
+@author: user
+"""
+
 ACCESS_TOKEN = "1486715023376347137-T5Qldewu4xhsRvn14u3m3RuskLc96N"
 ACCESS_TOKEN_SECRET = "WykZCbGEVc0aQjOQWXn3XstKcOaIHr8XnyKWLSw1knIV0"
 CONSUMER_KEY = "wNZEbE6YSXuqkz9ccKAqHHXPS"

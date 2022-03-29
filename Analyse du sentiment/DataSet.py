@@ -11,9 +11,9 @@ import csv
 
 class DataSet : #cette classe gère le fichier excel du dataset => va récupérer les coefs en entrée de l'interface
     
-    def __init__(self,path):
+    def __init__(self,path,Ecoef,Scoef,Gcoef,expectedscore):
         self.path=path
-        self.titres = self.getOurCompaniesCoefs(0.7,0.2,0.1,75) #version avec coefs
+        self.titres = self.getOurCompaniesCoefs(Ecoef,Scoef,Gcoef,expectedscore) #version avec coefs
         #self.titres = self.getOurCompaniesMean(75) sans coefs
         
     def getOurCompaniesMean(self,expectedscore):
@@ -36,13 +36,13 @@ class DataSet : #cette classe gère le fichier excel du dataset => va récupére
             "G Score": initialTable["GOVERNANCE"],
             "Final Score": initialTable["ENVIRONMENT"]*Ecoef+ initialTable["SOCIAL"]*Scoef+initialTable["GOVERNANCE"]*Gcoef}
         companies = pd.DataFrame(datas)
-        companies = companies.drop(range(40, 44))
+        companies = companies.drop(range(40, 44)).sort_values("Final Score")[::-1]
         for i in range(40):
             if (companies["Final Score"][i]<expectedscore) : companies = companies.drop(i) 
         return companies
     
     
 if __name__ == "__main__":
-    notreDataSet=DataSet("/Users/user/Documents/Finance/CAC40_valeurs_ESG.xlsx")
+    notreDataSet=DataSet("/Users/user/Documents/Finance/CAC40_valeurs_ESG.xlsx",0.7,0.2,0.1,85)
     print (notreDataSet.titres)
     
