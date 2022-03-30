@@ -1,34 +1,140 @@
 import tkinter as tk
 
+fields = ('ENVIRONNEMENT', 'Émissions', 'Utilisation des ressources', 'Innovation', 'SOCIAL', "Droits de l'homme" ,"Responsabilité du produit", "Main d'œuvre", "Communauté", 'GOUVERNANCE', "Gestion", "Actionnaires", "Stratégie RSE")
 
-fields = 'Environment', 'Social', 'Governance'
+def score_totaux_complexes(entries):
+    
+    # ENVIRONNEMENT
+    # emissions
+    emissions = float(entries['Émissions'].get())
+    # utilisation des ressources
+    utilisation_des_ressources = float(entries['Utilisation des ressources'].get())
+    # innovation
+    innovation = float(entries['Innovation'].get())
+    # Total_env
+    somme_env = emissions + utilisation_des_ressources + innovation
+    
+    print("Émissions :", emissions / somme_env)
+    print("Utilisation des ressources :", utilisation_des_ressources / somme_env)
+    print("Innovation :", innovation / somme_env)
+    
+    # SOCIAL
+    # droits de l'homme
+    droits_de_lhomme = float(entries["Droits de l'homme"].get())
+    # Responsabilité du produit
+    responsabilite_produit = float(entries["Responsabilité du produit"].get()) 
+    # Main d'œuvre
+    main_doeuvre = float(entries["Main d'œuvre"].get())
+    # Communauté
+    communaute = float(entries['Communauté'].get())
+    # Total_soc
+    somme_soc = droits_de_lhomme + main_doeuvre + responsabilite_produit + communaute
+    
+    print("Droits de l'homme :", droits_de_lhomme / somme_soc)
+    print("Responsabilité du produit :", responsabilite_produit / somme_soc)
+    print("Main d'œuvre :", main_doeuvre / somme_soc)
+    print("Communauté :", communaute / somme_soc)
+    
+    # GOUVERNANCE
+    # Gestion
+    gestion = float(entries['Gestion'].get())
+    # Actionnaires
+    actionnaires = float(entries['Actionnaires'].get())
+    # Stratégie RSE
+    strat_rse = float(entries['Stratégie RSE'].get())
+    # Total_gov
+    somme_gov = gestion + actionnaires + strat_rse
+    
+    
+    print("Gestion :", gestion / somme_gov)
+    print("Actionnaires :", actionnaires / somme_gov)
+    print("Stratégie RSE :", strat_rse / somme_gov)
+    
+    #Total Final
+    environnement = float(entries['ENVIRONNEMENT'].get())
+    social = float(entries['SOCIAL'].get())
+    gouvernance = float(entries['GOUVERNANCE'].get())
+    #Tot_fi
+    somme_fi = environnement + social + gouvernance
+    
+    print('ENVIRONNEMENT :', environnement / somme_fi)
+    print('SOCIAL :', social / somme_fi)
+    print('GOUVERNANCE :', gouvernance / somme_fi)
+    
+    
 
-def fetch(entries):
-    for entry in entries:
-        field = entry[0]
-        text  = entry[1].get()
-        print('%s: "%s"' % (field, text)) 
+    
+    
+    """
+    # principal loan:
+    loan = float(entries['Loan Principle'].get())
+    n =  float(entries['Number of Payments'].get())
+    remaining_loan = float(entries['Remaining Loan'].get())
+    q = (1 + r)** n
+    monthly = r * ( (q * loan - remaining_loan) / ( q - 1 ))
+    monthly = ("%8.2f" % monthly).strip()
+    entries['Monthly Payment'].delete(0, tk.END)
+    entries['Monthly Payment'].insert(0, monthly )
+    print("Monthly Payment: %f" % float(monthly))
+    """
+
+def score_totaux_simples(entries):
+    
+    #Total Final
+    environnement = float(entries['ENVIRONNEMENT'].get())
+    social = float(entries['SOCIAL'].get())
+    gouvernance = float(entries['GOUVERNANCE'].get())
+    #Tot_fi
+    somme_fi = environnement + social + gouvernance
+    
+    print('ENVIRONNEMENT :', environnement / somme_fi)
+    print('SOCIAL :', social / somme_fi)
+    print('GOUVERNANCE :', gouvernance / somme_fi)
+    
+    """
+    # period rate:
+    r = (float(entries['Annual Rate'].get()) / 100) / 12
+    print("r", r)
+    # principal loan:
+    loan = float(entries['Loan Principle'].get())
+    n =  float(entries['Number of Payments'].get()) 
+    monthly = float(entries['Monthly Payment'].get())
+    q = (1 + r) ** n
+    remaining = q * loan  - ( (q - 1) / r) * monthly
+    remaining = ("%8.2f" % remaining).strip()
+    entries['Remaining Loan'].delete(0, tk.END)
+    entries['Remaining Loan'].insert(0, remaining )
+    print("Remaining Loan: %f" % float(remaining))
+    """
 
 def makeform(root, fields):
-    entries = []
+    entries = {}
     for field in fields:
+        print(field)
         row = tk.Frame(root)
-        lab = tk.Label(row, width=15, text=field, anchor='w')
+        lab = tk.Label(row, width=22, text=field+": ", anchor='w')
         ent = tk.Entry(row)
-        row.pack(side=tk.TOP, fill=tk.X, padx=5, pady=5)
+        ent.insert(0, "0")
+        row.pack(side=tk.TOP, 
+                 fill=tk.X, 
+                 padx=5, 
+                 pady=5)
         lab.pack(side=tk.LEFT)
-        ent.pack(side=tk.RIGHT, expand=tk.YES, fill=tk.X)
-        entries.append((field, ent))
+        ent.pack(side=tk.RIGHT, 
+                 expand=tk.YES, 
+                 fill=tk.X)
+        entries[field] = ent
     return entries
 
 if __name__ == '__main__':
     root = tk.Tk()
-    root.title("Values of the Algorithm")
     ents = makeform(root, fields)
-    root.bind('<Return>', (lambda event, e=ents: fetch(e)))   
-    b1 = tk.Button(root, text='Show',
-                  command=(lambda e=ents: fetch(e)))
+    b1 = tk.Button(root, text='Scores Totaux simples',
+           command=(lambda e=ents: score_totaux_simples(e)))
     b1.pack(side=tk.LEFT, padx=5, pady=5)
-    b2 = tk.Button(root, text='Quit', command=root.quit)
+    b2 = tk.Button(root, text='Scores Totaux complexes',
+           command=(lambda e=ents: score_totaux_complexes(e)))
     b2.pack(side=tk.LEFT, padx=5, pady=5)
+    b3 = tk.Button(root, text='Quit', command=root.quit)
+    b3.pack(side=tk.LEFT, padx=5, pady=5)
     root.mainloop()
