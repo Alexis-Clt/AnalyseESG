@@ -65,18 +65,7 @@ def score_totaux_complexes(entries):
 
     
     
-    """
-    # principal loan:
-    loan = float(entries['Loan Principle'].get())
-    n =  float(entries['Number of Payments'].get())
-    remaining_loan = float(entries['Remaining Loan'].get())
-    q = (1 + r)** n
-    monthly = r * ( (q * loan - remaining_loan) / ( q - 1 ))
-    monthly = ("%8.2f" % monthly).strip()
-    entries['Monthly Payment'].delete(0, tk.END)
-    entries['Monthly Payment'].insert(0, monthly )
-    print("Monthly Payment: %f" % float(monthly))
-    """
+
 
 def score_totaux_simples(entries):
     
@@ -91,21 +80,7 @@ def score_totaux_simples(entries):
     print('SOCIAL :', social / somme_fi)
     print('GOUVERNANCE :', gouvernance / somme_fi)
     
-    """
-    # period rate:
-    r = (float(entries['Annual Rate'].get()) / 100) / 12
-    print("r", r)
-    # principal loan:
-    loan = float(entries['Loan Principle'].get())
-    n =  float(entries['Number of Payments'].get()) 
-    monthly = float(entries['Monthly Payment'].get())
-    q = (1 + r) ** n
-    remaining = q * loan  - ( (q - 1) / r) * monthly
-    remaining = ("%8.2f" % remaining).strip()
-    entries['Remaining Loan'].delete(0, tk.END)
-    entries['Remaining Loan'].insert(0, remaining )
-    print("Remaining Loan: %f" % float(remaining))
-    """
+
 
 def makeform(root, fields):
     entries = {}
