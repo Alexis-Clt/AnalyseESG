@@ -39,6 +39,8 @@ On peut aussi utiliser l'invité de commande windows et pip, par exemple `pip3 i
 
 Alexis Cullet <alexis.cullet@edu.devinci.fr>
 
+Alexandre Morlat <alexandre.morlat@edu.devinci.fr>
+
 Thomas Dunn <thomas.dunn@edu.devinci.fr>
 
 Maamoun Mekki <maamoun.mekki@edu.devinci.fr>
