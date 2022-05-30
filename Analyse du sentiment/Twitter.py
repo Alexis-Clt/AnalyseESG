@@ -42,19 +42,24 @@ class TwitterClient(object):
     
     def lastSevenDaysTweets(self,query):
         return self.client.search_recent_tweets(query)
+    
+    def lastTweets(self,query,start,end):
+        return self.client.search_all_tweets(query,start_time = start , end_time = end)
+   
 
     def TwitterSS(query):
         client = TwitterClient()
         collected_data=client.lastSevenDaysTweets(query).data
-        test=collected_data[0].text
-        text=[]
-        ssresult=[]
-        for data in collected_data:
-            text.append(data.text)
-        for sentence in text:
-            sid = SentimentIntensityAnalyzerClass() 
-            ss = sid.polarity_scores(sentence)
-            ssresult.append(ss)
+        for i in range(len(collected_data)):
+            test=collected_data[0].text #changer 0 avec un iterateur
+            text=[]
+            ssresult=[]
+            for data in collected_data:
+                text.append(data.text)
+            for sentence in text:
+                sid = SentimentIntensityAnalyzerClass() 
+                ss = sid.polarity_scores(sentence)
+                ssresult.append(ss)
         return ssresult
         
             
